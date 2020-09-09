@@ -143,3 +143,9 @@ input[type=checkbox]:checked:before{
 input[type="checkbox"][readonly] {
   pointer-events: none;
 }
+
+.create-button[disabled] {
+  background-color: #6E7D87;
+  border: 1px solid #6E7D87;
+  cursor: not-allowed;
+}

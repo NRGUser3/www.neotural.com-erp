@@ -36,6 +36,7 @@ export class UserManagementComponent implements OnInit {
 
 
   ngOnInit() {
+    this.userList = '';
     this.SpinnerService.show();  
     this.getMenuName1("MEN10000");
     this.getMenuName2("MEN10001");

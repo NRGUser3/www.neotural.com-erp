@@ -4,7 +4,7 @@
   </div>
   <div class="col-6">
       <button (click)="addUserMgt()" class="create-button" placement="bottom" 
-        ngbTooltip="Add User" triggers="hover">Add  
+        ngbTooltip="Add User" triggers="hover" [disabled]="this.userList.length == 5">Add  
       </button>
   </div>
 </div>    
