@@ -30,7 +30,8 @@
           <th>Status</th>
         </tr>
       </thead>
-      <tbody class="purchase-order-row-invoiced" *ngFor="let item of invoiceList"> 
+      <tbody class="purchase-order-row-invoiced" *ngFor="let item of invoiceList"
+        (dblclick)="generatePdf(item.base64)">
         <tr>
           <td>{{item.invoicedate}}</td>
           <td>{{item.invoicenumber}}</td>

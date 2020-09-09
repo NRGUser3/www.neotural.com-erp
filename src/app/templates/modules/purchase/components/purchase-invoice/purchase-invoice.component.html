@@ -44,7 +44,8 @@
           <th>Stock Status</th>
         </tr>
       </thead>
-      <tbody class="purchase-order-row-invoiced" *ngFor="let item of invoiceList; let i = index"> 
+      <tbody class="purchase-order-row-invoiced" *ngFor="let item of invoiceList; let i = index"
+        (dblclick)="generatePdf(item.base64)">
         <tr>
           <td>
             <div class="custom-control custom-checkbox">
