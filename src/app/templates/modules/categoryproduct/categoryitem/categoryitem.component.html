@@ -46,7 +46,7 @@
           <th class="txt-right wid-100px">Selling Price / Unit</th>
         </tr>
       </thead>
-      <tbody *ngFor="let a of allproductlist; let i = index"> 
+      <tbody *ngFor="let a of allproductlist; let i = index" (dblclick)="slideshow(a)"> 
         <tr>
           <td>
             <div *ngIf="a.productImage1; else productNoImage">

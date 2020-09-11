@@ -1,0 +1,80 @@
+@import "_base";
+
+input[type=text], select, textarea {
+  width: 85%;
+  padding: 12px;
+  background: none;
+  border-radius: 4px;
+  resize: vertical;
+  color:white;
+  border: 1px solid  $header-bg; 
+}
+.heading {
+  color:$table-header-font !important;
+}
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+::ng-deep .productsilde-class .modal-dialog {
+  max-width: 80%;
+  width: 60% !important;
+  padding-top: 50px !important;
+  padding-bottom: 50px !important;
+}
+.modal-header,.modal-body {
+  background:$po-order-form-bg;
+  padding: 0.5rem;
+  border: 1px solid $po-order-form-bg;
+}
+.modal-footer {
+  border: 1px solid $po-order-form-bg;
+}
+::ng-deep .productsilde-class .modal-content {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  background:$po-order-form-bg;
+}
+.productlogo{
+  width: 100%;
+  height: 200px;
+}
+$bootstrap-sm: 576px;
+$bootstrap-md: 768px;
+$bootstrap-lg: 992px;
+$bootstrap-xl: 1200px;
+
+.carousel-control-prev, .carousel-control-next {
+  font-size: 2em;
+  top: auto;
+  opacity: 1;
+  bottom: -52px;
+  
+  @media (min-width: $bootstrap-md) {
+    top: 0;
+    opacity: 0.5;
+    bottom: 0;
+  }
+}
+
+.carousel-control-next-icon,  .carousel-control-prev-icon {
+  height: 30px;
+  width: 30px;
+}
+
+/* .carousel-control-prev {
+  @media (min-width: $bootstrap-md) {
+    left: -90px;
+  }
+}
+
+.carousel-control-next {
+  @media (min-width: $bootstrap-md) {
+    right: -90px;
+  }
+} */
+
+.carousel-indicators {
+  bottom: -50px;
+}

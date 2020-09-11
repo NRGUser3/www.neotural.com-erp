@@ -16,7 +16,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {startWith, map} from 'rxjs/operators';
-
+import { ProductSlideComponent } from './../productslide/productslide.component';
 
 // addnewcategory start
 @Component({
@@ -1077,6 +1077,7 @@ export class AllproducteditComponent {
             this.model.vendorcode=this.allproducedittlist[k].vendorname+"-"+this.allproducedittlist[k].vendorcode;
             console.log("vendor name & code -->"+this.model.vendorcode);
             this.model.unit=this.allproducedittlist[k].unit;
+            this.model.createddate=this.allproducedittlist[k].createddate;
             this.model.productImage=this.allproducedittlist[k].productImage;
             if(this.model.productImage[0]!=undefined){
               this.div1 = true;
@@ -1430,7 +1431,7 @@ export class CategoryItemComponent implements OnInit {
   inputproductcode:string;
 
   productfilterList: any = {};
-
+  allproduclist: any = {};
 
   // All Product
   displayedColumns: string[] = [
@@ -2056,6 +2057,30 @@ productlist(number: string){
   onSearchChange(searchValue: string): void {  
     this.allproductlist = this.productfilterList.filter(product =>
     product.productname.toLowerCase().indexOf(searchValue.toLowerCase()) !==-1)
+  }
+
+  slideshow(item:any){    
+    this.catprodservice.loadEditItem(item.vendorcode)
+    .subscribe(
+      data => {
+        this.allproduclist = data;
+        for(let k=0;k<this.allproduclist.length;k++){
+          if(this.allproduclist[k].prodcode==item.prodcode){
+            this.model.productImage=this.allproduclist[k].productImage;
+
+            let data = { productImage: this.model.productImage,productname: item.productname,productcode: item.prodcode,
+              categoryname: item.categoryname,price: item.price,unit: item.unit,tax: item.tax,margin: item.margin,
+              sellingprice: item.sellingprice,description: item.description,createdDate: item.createdDate }
+            
+            const modalRef = this.modalService.open(ProductSlideComponent, { windowClass: 'productsilde-class'});
+            modalRef.componentInstance.fromParent = data;
+            
+          }
+        }
+      },
+      error => {	}
+    );
+    
   }
 
 }

@@ -53,13 +53,14 @@ import { CategoryComponent } from './category/category.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PromotionListComponent } from './promotionlist/promotionlist.component';
+import { ProductSlideComponent } from './productslide/productslide.component';
 
 //import { GridModule, PDFModule, ExcelModule } from '@progress/kendo-angular-grid';
 //import { InputsModule } from '@progress/kendo-angular-inputs';
 
 @NgModule({
   declarations: [AddnewcategoryComponent,CategoryItemComponent,CategoryeditdeleteComponent,AddpromotionComponent,DiscounteditComponent, DiscountdeleteComponent,AddnewproductComponent,ProductviewComponent,ProducteditComponent,AllproducteditComponent,CategorytableComponent, 
-      UnitsComponent, AddunitsComponent, CategoryComponent,PromotionListComponent],
+      UnitsComponent, AddunitsComponent, CategoryComponent,PromotionListComponent,ProductSlideComponent],
   imports: [
     FormsModule,
     MatFormFieldModule,

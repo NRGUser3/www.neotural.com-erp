@@ -18,6 +18,7 @@ import { UnitsComponent } from './units/units.component';
 import { AddunitsComponent } from './addunits/addunits.component';
 import { CategoryComponent } from './category/category.component';
 import { PromotionListComponent } from '././promotionlist/promotionlist.component';
+import { ProductSlideComponent } from './productslide/productslide.component';
 
 const routes: Routes = [
   {
@@ -42,6 +43,10 @@ const routes: Routes = [
   {
     path: 'promotionlist',
     component: PromotionListComponent,
+  },
+  {
+    path: 'productslide',
+    component: ProductSlideComponent,
   }
 
 ];
